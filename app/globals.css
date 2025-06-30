@@ -1,0 +1,445 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Walmart-themed color variables */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 210 100% 28%; /* Walmart Blue */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 45 100% 56%; /* Walmart Yellow */
+    --secondary-foreground: 45 100% 15%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 98%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 100% 28%; /* Walmart Blue */
+    --radius: 0.5rem;
+
+    /* Custom Walmart variables */
+    --walmart-blue: 210 100% 28%;
+    --walmart-yellow: 45 100% 56%;
+    --walmart-green: 145 100% 33%;
+    --walmart-orange: 25 100% 50%;
+    --walmart-gray: 210 11% 71%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Walmart-themed component styles */
+  .btn-walmart {
+    @apply bg-walmart-blue hover:bg-walmart-blue/90 text-white font-medium px-6 py-2 rounded-lg transition-all duration-200 shadow-walmart hover:shadow-walmart-lg;
+  }
+
+  .btn-walmart-secondary {
+    @apply bg-walmart-yellow hover:bg-walmart-yellow/90 text-walmart-gray-dark font-medium px-6 py-2 rounded-lg transition-all duration-200 shadow-walmart hover:shadow-walmart-lg;
+  }
+
+  .btn-walmart-success {
+    @apply bg-walmart-green hover:bg-walmart-green/90 text-white font-medium px-6 py-2 rounded-lg transition-all duration-200 shadow-walmart hover:shadow-walmart-lg;
+  }
+
+  .card-walmart {
+    @apply bg-white border border-gray-200 rounded-xl shadow-walmart hover:shadow-walmart-lg transition-all duration-200;
+  }
+
+  .gradient-walmart {
+    @apply bg-gradient-walmart text-white;
+  }
+
+  .gradient-walmart-yellow {
+    @apply bg-gradient-walmart-yellow text-walmart-gray-dark;
+  }
+
+  .gradient-walmart-success {
+    @apply bg-gradient-walmart-success text-white;
+  }
+
+  .text-walmart-primary {
+    @apply text-walmart-blue;
+  }
+
+  .text-walmart-secondary {
+    @apply text-walmart-yellow;
+  }
+
+  .text-walmart-success {
+    @apply text-walmart-green;
+  }
+
+  .border-walmart {
+    @apply border-walmart-blue;
+  }
+
+  .bg-walmart-light {
+    @apply bg-blue-50;
+  }
+
+  .hover-walmart {
+    @apply hover:bg-walmart-blue hover:text-white transition-colors duration-200;
+  }
+
+  /* Status indicators */
+  .status-success {
+    @apply bg-walmart-green/10 text-walmart-green border border-walmart-green/20 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-warning {
+    @apply bg-walmart-yellow/10 text-walmart-orange border border-walmart-yellow/20 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-error {
+    @apply bg-red-50 text-red-700 border border-red-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-info {
+    @apply bg-walmart-blue/10 text-walmart-blue border border-walmart-blue/20 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  /* Loading states */
+  .loading-walmart {
+    @apply animate-pulse bg-gradient-to-r from-walmart-blue/10 via-walmart-blue/5 to-walmart-blue/10;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    @apply animate-fade-in;
+  }
+
+  .animate-slide-in {
+    @apply animate-slide-in;
+  }
+
+  .animate-pulse-walmart {
+    @apply animate-pulse-walmart;
+  }
+
+  .animate-bounce-walmart {
+    @apply animate-bounce-walmart;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-walmart::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-walmart::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+
+  .scrollbar-walmart::-webkit-scrollbar-thumb {
+    @apply bg-walmart-blue/30 rounded-full hover:bg-walmart-blue/50;
+  }
+
+  /* Form elements */
+  .input-walmart {
+    @apply border-gray-300 focus:border-walmart-blue focus:ring-walmart-blue/20 focus:ring-2 rounded-lg px-4 py-2 transition-all duration-200;
+  }
+
+  .select-walmart {
+    @apply border-gray-300 focus:border-walmart-blue focus:ring-walmart-blue/20 focus:ring-2 rounded-lg px-4 py-2 transition-all duration-200 bg-white;
+  }
+
+  /* Dashboard specific styles */
+  .dashboard-card {
+    @apply card-walmart p-6 hover:scale-[1.02] transition-transform duration-200;
+  }
+
+  .metric-card {
+    @apply dashboard-card bg-gradient-to-br from-white to-gray-50;
+  }
+
+  .metric-value {
+    @apply text-3xl font-bold text-walmart-blue;
+  }
+
+  .metric-label {
+    @apply text-sm font-medium text-gray-600 uppercase tracking-wide;
+  }
+
+  .metric-change-positive {
+    @apply text-walmart-green text-sm font-medium;
+  }
+
+  .metric-change-negative {
+    @apply text-red-600 text-sm font-medium;
+  }
+
+  /* AI/ML specific styles */
+  .ai-prediction {
+    @apply bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg p-4;
+  }
+
+  .confidence-high {
+    @apply bg-walmart-green/10 text-walmart-green;
+  }
+
+  .confidence-medium {
+    @apply bg-walmart-yellow/10 text-walmart-orange;
+  }
+
+  .confidence-low {
+    @apply bg-red-50 text-red-600;
+  }
+
+  /* Inventory optimization styles */
+  .optimization-opportunity {
+    @apply bg-gradient-to-r from-walmart-green/5 to-walmart-blue/5 border border-walmart-green/20 rounded-lg p-4 hover:shadow-walmart transition-all duration-200;
+  }
+
+  .anomaly-alert {
+    @apply bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-lg p-4 animate-pulse-walmart;
+  }
+
+  /* Route optimization styles */
+  .route-segment {
+    @apply bg-walmart-blue/10 border border-walmart-blue/20 rounded-lg p-3 hover:bg-walmart-blue/20 transition-colors duration-200;
+  }
+
+  .route-optimized {
+    @apply bg-walmart-green/10 border border-walmart-green/20;
+  }
+}
+
+@layer utilities {
+  /* Custom utility classes */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Walmart brand utilities */
+  .walmart-shadow {
+    box-shadow: 0 4px 14px 0 rgba(0, 76, 145, 0.15);
+  }
+
+  .walmart-shadow-lg {
+    box-shadow: 0 10px 25px -3px rgba(0, 76, 145, 0.1), 0 4px 6px -2px rgba(0, 76, 145, 0.05);
+  }
+
+  .walmart-glow {
+    box-shadow: 0 0 20px rgba(0, 76, 145, 0.3);
+  }
+
+  /* Performance optimization utilities */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Accessibility utilities */
+  .sr-only-focusable:focus {
+    @apply not-sr-only;
+  }
+
+  /* Print utilities */
+  @media print {
+    .print-hidden {
+      display: none !important;
+    }
+
+    .print-visible {
+      display: block !important;
+    }
+  }
+}
+
+/* Custom CSS for specific components */
+.recharts-cartesian-axis-tick-value {
+  @apply text-xs fill-gray-500;
+}
+
+.recharts-legend-item-text {
+  @apply text-sm text-gray-700;
+}
+
+.recharts-tooltip-wrapper {
+  @apply shadow-walmart-lg rounded-lg border border-gray-200;
+}
+
+/* File upload drag and drop styles */
+.drag-active {
+  @apply border-walmart-blue bg-walmart-blue/5 scale-[1.02];
+}
+
+.drag-reject {
+  @apply border-red-400 bg-red-50;
+}
+
+/* Progress bar custom styles */
+.progress-walmart {
+  @apply bg-walmart-blue;
+}
+
+.progress-walmart-secondary {
+  @apply bg-walmart-yellow;
+}
+
+.progress-walmart-success {
+  @apply bg-walmart-green;
+}
+
+/* Table styles */
+.table-walmart {
+  @apply w-full border-collapse;
+}
+
+.table-walmart th {
+  @apply bg-walmart-blue/5 border-b border-walmart-blue/20 px-4 py-3 text-left text-sm font-semibold text-walmart-blue;
+}
+
+.table-walmart td {
+  @apply border-b border-gray-200 px-4 py-3 text-sm text-gray-900;
+}
+
+.table-walmart tr:hover {
+  @apply bg-walmart-blue/5;
+}
+
+/* Modal and dialog styles */
+.modal-overlay {
+  @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-50;
+}
+
+.modal-content {
+  @apply bg-white rounded-xl shadow-walmart-xl max-w-lg w-full mx-4;
+}
+
+/* Notification styles */
+.notification-success {
+  @apply bg-walmart-green text-white;
+}
+
+.notification-warning {
+  @apply bg-walmart-yellow text-walmart-gray-dark;
+}
+
+.notification-error {
+  @apply bg-red-500 text-white;
+}
+
+.notification-info {
+  @apply bg-walmart-blue text-white;
+}
+
+/* Chart and visualization styles */
+.chart-container {
+  @apply bg-white rounded-lg border border-gray-200 p-6 shadow-walmart;
+}
+
+.chart-title {
+  @apply text-lg font-semibold text-walmart-blue mb-4;
+}
+
+.chart-legend {
+  @apply flex items-center gap-4 text-sm text-gray-600;
+}
+
+/* AI/ML Dashboard specific styles */
+.forecast-card {
+  @apply bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6;
+}
+
+.anomaly-card {
+  @apply bg-gradient-to-br from-red-50 to-orange-50 border border-red-200 rounded-xl p-6;
+}
+
+.optimization-card {
+  @apply bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .mobile-stack {
+    @apply flex-col space-y-4 space-x-0;
+  }
+
+  .mobile-full {
+    @apply w-full;
+  }
+
+  .mobile-hidden {
+    @apply hidden;
+  }
+
+  .mobile-text-sm {
+    @apply text-sm;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-walmart {
+    @apply border-2 border-walmart-blue;
+  }
+
+  .card-walmart {
+    @apply border-2 border-gray-300;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-in,
+  .animate-pulse-walmart,
+  .animate-bounce-walmart {
+    animation: none;
+  }
+
+  .transition-all,
+  .transition-colors,
+  .transition-transform {
+    transition: none;
+  }
+}
